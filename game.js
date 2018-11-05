@@ -34,18 +34,24 @@ function kick() {
   update()
 }
 function update() {
-  // if (target.health = 100) {
-  //   document.getElementById("char").innerHTML = Image(zelgius.png)
-  // }
-  // else if (target.health <= 66) {
-  //   document.getElementById("char").innerHTML = Image(zelgiusattack.jpg)
-  // }
-  // else (target.health <= 33){
-  //   document.getElementById("char").innerHTML = Image(zelgiusinjured.png)
-  // }
-  if (target.health <= 0) {
-    target.health = 0
+  let template = '';
+  if (target.health == 100) {
+    template += `<img style="height: 300px;" src="zelgius.png"></img>`
+    document.getElementById("char").innerHTML = template;
   }
+  else if (target.health < 100 && target.health >= 34) {
+    template += `<img style="height: 300px;" src="zelgiusattack.jpg"></img>`
+    document.getElementById("char").innerHTML = template;
+  }
+  else if (target.health <= 33 && target.health >= 1) {
+    template += `<img style="height: 300px;" src="zelgiusinjured.png"></img>`
+    document.getElementById("char").innerHTML = template;
+  }
+
+  if (target.health <= 0) {
+    target.health = 0;
+  }
+
   String(target.health)
   String(target.hits)
   // @ts-ignore
