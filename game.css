@@ -1,3 +1,20 @@
-.fe {
-  background-image: "53752.png";
+/* .fe {
+  background-image: url(53752.png);
+  
+} */
+
+/* .char {
+  height: 200px;
+ width: 200px;
+ background-image:url( spear.jpg);
+ background-position: left;
+ background-repeat:no-repeat;
+ background-size:2900%;
+
+} */
+
+@keyframes spear {
+ from {background-position:left;}
+ to { background-position:right;}
 }
+

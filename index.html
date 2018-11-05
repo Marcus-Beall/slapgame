@@ -12,12 +12,19 @@
 
 <body>
   <div class="container-fluid fe">
-    <header></header>
+    <header>
+      <div class="row">
+        <h1>soldierboy
+        </h1>
+      </div>
+    </header>
     <div class="row justify-content-center">
       <div class="col-7 d-flex justify-content-end">
-        <img src="//placehold.it/500x500" /></div>
+        <div class="char">
+          <img src="//placehold.it/500x500" /></div>
+      </div>
       <div class="col-5">
-        <div class="span" id="hits"></div>
+        <div class="span" id="hits" style="color: white;"></div>
       </div>
     </div>
 
@@ -27,14 +34,20 @@
           aria-valuemin="0" aria-valuemax="100"><span>Health:<span id="health">100</span></span></div>
       </div>
     </div>
-    <div class="row"></div>
+
     <div class="row justify-content-center">
       <div class="col-1">
-        <button class="btn btn-outline-warning" id="sword" onclick="sword()">Siegelinde</button></div>
-      <div class="col-1"><button id="axe" class="btn btn-outline-warning" onclick="axe()">Hauteclere</button></div>
-      <div class="col-1"><button id="lance" class="btn btn-outline-warning" onclick="lance()">Gradivus</button></div>
-      <div class="col-1"><button id="resetbtn" class="btn btn-outline-secondary" onclick="reset()">Reset</button></div>
+        <button id="slap" class="btn btn-warning" onclick="slap()">Slap</button></div>
+      <div class="col-1"><button id="punch" class="btn btn-warning" onclick="punch()">Punch</button></div>
+      <div class="col-1"><button id="kick" class="btn btn-warning" onclick="kick()">Kick</button></div>
+      <div class="col-1"><button id="resetbtn" class="btn btn-secondary" onclick="reset()">Reset</button></div>
+      <div class="col-4">
+        <button id="sword" class="btn btn-info" onclick="sword()">Siegelinde</button>
+        <button id="axe" class="btn btn-info" onclick="axe()">Hauteclere</button>
+        <button id="lance" class="btn btn-info" onclick="lance()">Gradivus</button>
+      </div>
     </div>
+
   </div>
 
   <script src="game.js"></script>

@@ -1,77 +1,89 @@
-var health = 100;
-var slapbtn = document.getElementById("slapbtn")
-var kickbtn = document.getElementById("kickbtn")
-var punchbtn = document.getElementById("punchbtn")
-var hits = 0;
-var enemy = "";
+let target = {
+  name: "target",
+  health: 100,
+  hits: 0,
+  modifier: 1,
+  items: []
+}
+
 var items = {
   sword: {
-    name: "Siegelinde", weight: 1, might: 16
+    name: "Siegelinde", weight: 1, might: 2, character: ""
   },
   axe: {
-    name: "Hauteclere", weight: 3, might: 20
+    name: "Hauteclere", weight: 3, might: 4, character: ""
   },
   lance: {
-    name: "Gradivus", weight: 2, might: 18
+    name: "Gradivus", weight: 2, might: 3, character: ""
   },
 }
 
-function sword() {
-  if (health - 1 < 0) {
-    health = 0
-
-  } else {
-    health--
-    hits++
-  }
-  String(health)
-  String(hits)
+function slap() {
+  target.health = target.health - (1 * target.modifier)
+  target.hits++
   update()
 }
-function lance() {
-  if (health - 5 < 0) {
-    health = 0
-
-  } else {
-    health -= 5
-    hits++
-  }
-  String(health)
-  String(hits)
+function punch() {
+  target.health = target.health - (5 * target.modifier)
+  target.hits++
   update()
 }
-
-function axe() {
-  if (health - 10 < 0) {
-    health = 0
-
-  } else {
-    health -= 10
-    hits++
-  }
-  String(health)
-  String(hits)
+function kick() {
+  target.health = target.health - (10 * target.modifier)
+  target.hits++
   update()
 }
-
 function update() {
-
+  if (target.health = 100) {
+    document.getElementById("char").innerHTML = Image(zelgius.png)
+  }
+  else if (target.health <= 66) {
+    document.getElementById("char").innerHTML = Image(zelgiusattack.jpg)
+  }
+  else (target.health <= 33){
+    document.getElementById("char").innerHTML = Image(zelgiusinjured.png)
+  }
+  if (target.health <= 0) {
+    target.health = 0
+  }
+  String(target.health)
+  String(target.hits)
   // @ts-ignore
-  document.getElementById("health").innerHTML = health
+  document.getElementById("health").innerHTML = target.health
   // @ts-ignore
-  document.getElementById("hits").innerHTML = hits
-
+  document.getElementById("hits").innerHTML = target.hits
   // @ts-ignore
-  parseInt(health)
+  parseInt(target.health)
   // @ts-ignore
-  parseInt(hits)
-
+  parseInt(target.hits)
 }
 
 function reset() {
-  health = 100
-  hits = 0
-  String(health)
-  String(hits)
+  target.health = 100
+  target.hits = 0
+  target.modifier = 1
+  document.getElementById("slap").innerText = "Slap"
+  document.getElementById("punch").innerText = "Punch"
+  document.getElementById("kick").innerText = "Kick"
   update()
 }
+
+function sword() {
+  target.modifier = 2
+  document.getElementById("slap").innerText = "Stab"
+  document.getElementById("punch").innerText = "Cut"
+  document.getElementById("kick").innerText = "Slice"
+}
+function axe() {
+  target.modifier = 4
+  document.getElementById("slap").innerText = "Chop"
+  document.getElementById("punch").innerText = "Hack"
+  document.getElementById("kick").innerText = "Swing"
+}
+function lance() {
+  target.modifier = 3
+  document.getElementById("slap").innerText = "Jab"
+  document.getElementById("punch").innerText = "Lunge"
+  document.getElementById("kick").innerText = "Sweep"
+}
+
