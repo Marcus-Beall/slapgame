@@ -40,7 +40,7 @@ function update() {
     document.getElementById("char").innerHTML = template;
   }
   else if (target.health < 100 && target.health >= 34) {
-    template += `<img style="height: 300px;" src="zelgiusattack.jpg"></img>`
+    template += `<img style="height: 300px;" src="zelgiusattack.png"></img>`
     document.getElementById("char").innerHTML = template;
   }
   else if (target.health <= 33 && target.health >= 1) {
