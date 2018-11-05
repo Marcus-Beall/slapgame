@@ -34,15 +34,15 @@ function kick() {
   update()
 }
 function update() {
-  if (target.health = 100) {
-    document.getElementById("char").innerHTML = Image(zelgius.png)
-  }
-  else if (target.health <= 66) {
-    document.getElementById("char").innerHTML = Image(zelgiusattack.jpg)
-  }
-  else (target.health <= 33){
-    document.getElementById("char").innerHTML = Image(zelgiusinjured.png)
-  }
+  // if (target.health = 100) {
+  //   document.getElementById("char").innerHTML = Image(zelgius.png)
+  // }
+  // else if (target.health <= 66) {
+  //   document.getElementById("char").innerHTML = Image(zelgiusattack.jpg)
+  // }
+  // else (target.health <= 33){
+  //   document.getElementById("char").innerHTML = Image(zelgiusinjured.png)
+  // }
   if (target.health <= 0) {
     target.health = 0
   }
